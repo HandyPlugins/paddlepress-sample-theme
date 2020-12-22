@@ -12,8 +12,8 @@ namespace PaddlePress\Sample;
 // phpcs:disable WordPress.WP.I18n.MixedOrderedPlaceholdersText
 
 $config = array(
-	'license_api_url' => 'http://example.org/wp-json/paddlepress-api/v1/license', // Site where EDD is hosted
-	'update_api_url'  => 'http://example.org/wp-json/paddlepress-api/v1/update', // Site where EDD is hosted
+	'license_api_url' => 'http://example.org/wp-json/paddlepress-api/v1/license', // License endpoint
+	'update_api_url'  => 'http://example.org/wp-json/paddlepress-api/v1/update', // Update endpoint
 	'theme_slug'      => 'paddlepress-sample-theme', // Theme slug
 	'download_tag'    => 'paddlepress-sample', // download tag
 	'version'         => '1.0.0', // The current version of this theme
