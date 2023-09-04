@@ -42,6 +42,14 @@ class Theme_Updater {
 	 * @var string
 	 */
 	private $download_tag;
+
+	/**
+	 * Whether update from the beta version or not
+	 *
+	 * @var $slug
+	 */
+	private $beta;
+
 	/**
 	 * request param
 	 *
