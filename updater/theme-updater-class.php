@@ -46,7 +46,7 @@ class Theme_Updater {
 	/**
 	 * Whether update from the beta version or not
 	 *
-	 * @var $slug
+	 * @var $beta
 	 */
 	private $beta;
 

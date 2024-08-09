@@ -59,6 +59,13 @@ class Theme_Updater_Admin {
 	protected $author = null;
 
 	/**
+	 * Whether update from the beta version or not
+	 *
+	 * @var $beta
+	 */
+	protected $beta;
+
+	/**
 	 * User feedback messages
 	 *
 	 * @var array
