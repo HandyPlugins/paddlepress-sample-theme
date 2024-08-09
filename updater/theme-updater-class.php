@@ -191,14 +191,29 @@ class Theme_Updater {
 	 *                        the request fails returns false.
 	 */
 	public function theme_update_transient( $value ) {
+		// Ensure $value is an object
+		if ( ! is_object( $value ) ) {
+			$value = new \stdClass();
+		}
+
 		$update_data = $this->check_for_update();
 
-		if ( $update_data ) {
-
+		if ( ! empty( $update_data ) ) {
 			// Make sure the theme property is set. See issue 1463 on Github in the Software Licensing Repo.
-			$update_data['theme'] = $this->theme_slug;
-
+			$update_data['theme']                 = $this->theme_slug;
 			$value->response[ $this->theme_slug ] = $update_data;
+		} else {
+			// No update is available.
+			$item = [
+				'theme'        => $this->theme_slug,
+				'new_version'  => $this->version,
+				'url'          => '',
+				'package'      => '',
+				'requires'     => '',
+				'requires_php' => '',
+			];
+			// Adding the "mock" item to the `no_update` property is required
+			$value->no_update[ $this->theme_slug ] = $item;
 		}
 
 		return $value;
